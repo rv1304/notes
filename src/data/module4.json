@@ -1,0 +1,121 @@
+{
+    "moduleTitle": "Arrays in Java",
+    "introduction": "This module covers understanding 1D, 2D, and jagged arrays, along with practice problems like matrix addition, multiplication, searching, and sorting.",
+    "sections": [
+      {
+        "title": "Understanding Arrays",
+        "content": "Arrays are collections of fixed-size, same-type elements stored in contiguous memory locations.",
+        "subsections": [
+          {
+            "subtitle": "1D Arrays",
+            "content": "1D arrays are single-dimensional arrays that store a sequence of elements.",
+            "syntax": "dataType[] arrayName = new dataType[size];",
+            "examples": [
+              {
+                "type": "code",
+                "language": "java",
+                "data": "int[] numbers = new int[5]; // Declaration\nnumbers[0] = 10;           // Initialization"
+              },
+              {
+                "type": "code",
+                "language": "java",
+                "data": "int[] numbers = {10, 20, 30, 40, 50}; // Declaration and Initialization"
+              },
+              {
+                "type": "code",
+                "language": "java",
+                "data": "for (int num : numbers) {\n    System.out.println(num);\n}"
+              }
+            ]
+          },
+          {
+            "subtitle": "2D Arrays",
+            "content": "2D arrays are multi-dimensional arrays where each element is identified by two indices.",
+            "syntax": "dataType[][] arrayName = new dataType[rows][columns];",
+            "examples": [
+              {
+                "type": "code",
+                "language": "java",
+                "data": "int[][] matrix = new int[2][3]; // Declaration\nmatrix[0][0] = 1; // Initialization"
+              },
+              {
+                "type": "code",
+                "language": "java",
+                "data": "int[][] matrix = {\n    {1, 2, 3},\n    {4, 5, 6}\n};"
+              },
+              {
+                "type": "code",
+                "language": "java",
+                "data": "for (int i = 0; i < matrix.length; i++) {\n    for (int j = 0; j < matrix[i].length; j++) {\n        System.out.print(matrix[i][j] + \" \");\n    }\n    System.out.println();\n}"
+              }
+            ]
+          },
+          {
+            "subtitle": "Jagged Arrays",
+            "content": "Jagged arrays are multi-dimensional arrays where each row can have a different number of columns.",
+            "syntax": "dataType[][] arrayName = new dataType[rows][];",
+            "examples": [
+              {
+                "type": "code",
+                "language": "java",
+                "data": "int[][] jaggedArray = new int[3][]; // 3 rows\njaggedArray[0] = new int[2];       // 2 columns in row 0\njaggedArray[1] = new int[3];       // 3 columns in row 1\njaggedArray[2] = new int[1];       // 1 column in row 2"
+              },
+              {
+                "type": "code",
+                "language": "java",
+                "data": "int[][] jaggedArray = {\n    {1, 2},\n    {3, 4, 5},\n    {6}\n};"
+              },
+              {
+                "type": "code",
+                "language": "java",
+                "data": "for (int i = 0; i < jaggedArray.length; i++) {\n    for (int j = 0; j < jaggedArray[i].length; j++) {\n        System.out.print(jaggedArray[i][j] + \" \");\n    }\n    System.out.println();\n}"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Practice Problems",
+        "content": "Practice problems to reinforce understanding of arrays in Java.",
+        "problems": [
+          {
+            "problem": "Matrix Addition",
+            "description": "Write a program to add two matrices.",
+            "solution": {
+              "type": "code",
+              "language": "java",
+              "data": "public class MatrixAddition {\n    public static void main(String[] args) {\n        int[][] matrix1 = {\n            {1, 2, 3},\n            {4, 5, 6}\n        };\n        int[][] matrix2 = {\n            {7, 8, 9},\n            {10, 11, 12}\n        };\n        int[][] result = new int[2][3];\n\n        for (int i = 0; i < matrix1.length; i++) {\n            for (int j = 0; j < matrix1[i].length; j++) {\n                result[i][j] = matrix1[i][j] + matrix2[i][j];\n            }\n        }\n\n        for (int[] row : result) {\n            for (int val : row) {\n                System.out.print(val + \" \");\n            }\n            System.out.println();\n        }\n    }\n}"
+            }
+          },
+          {
+            "problem": "Matrix Multiplication",
+            "description": "Write a program to multiply two matrices.",
+            "solution": {
+              "type": "code",
+              "language": "java",
+              "data": "public class MatrixMultiplication {\n    public static void main(String[] args) {\n        int[][] matrix1 = {\n            {1, 2},\n            {3, 4}\n        };\n        int[][] matrix2 = {\n            {5, 6},\n            {7, 8}\n        };\n        int[][] result = new int[2][2];\n\n        for (int i = 0; i < matrix1.length; i++) {\n            for (int j = 0; j < matrix2[0].length; j++) {\n                for (int k = 0; k < matrix2.length; k++) {\n                    result[i][j] += matrix1[i][k] * matrix2[k][j];\n                }\n            }\n        }\n\n        for (int[] row : result) {\n            for (int val : row) {\n                System.out.print(val + \" \");\n            }\n            System.out.println();\n        }\n    }\n}"
+            }
+          },
+          {
+            "problem": "Searching in an Array",
+            "description": "Write a program to search for a value in a 1D array.",
+            "solution": {
+              "type": "code",
+              "language": "java",
+              "data": "public class ArraySearch {\n    public static void main(String[] args) {\n        int[] numbers = {10, 20, 30, 40, 50};\n        int searchValue = 30;\n        boolean found = false;\n\n        for (int num : numbers) {\n            if (num == searchValue) {\n                found = true;\n                break;\n            }\n        }\n\n        if (found) {\n            System.out.println(\"Value found!\");\n        } else {\n            System.out.println(\"Value not found.\");\n        }\n    }\n}"
+            }
+          },
+          {
+            "problem": "Sorting an Array",
+            "description": "Write a program to sort an array using Bubble Sort.",
+            "solution": {
+              "type": "code",
+              "language": "java",
+              "data": "public class BubbleSort {\n    public static void main(String[] args) {\n        int[] numbers = {5, 3, 8, 6, 2};\n        for (int i = 0; i < numbers.length - 1; i++) {\n            for (int j = 0; j < numbers.length - 1 - i; j++) {\n                if (numbers[j] > numbers[j + 1]) {\n                    int temp = numbers[j];\n                    numbers[j] = numbers[j + 1];\n                    numbers[j + 1] = temp;\n                }\n            }\n        }\n\n        for (int num : numbers) {\n            System.out.print(num + \" \");\n        }\n    }\n}"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  

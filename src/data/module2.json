@@ -1,0 +1,181 @@
+{
+    "moduleTitle": "Java Basics",
+    "introduction": "This module covers identifiers, keywords, data types, operators, and practice problems to strengthen the foundation of Java programming.",
+    "sections": [
+      {
+        "title": "Identifiers and Keywords",
+        "problemStatement": "Identifiers are names used to identify variables, methods, classes, or other elements in Java. Keywords are reserved words with predefined meanings that cannot be used as identifiers.",
+        "content": "Identifiers must follow specific rules, and Java keywords are reserved for specific functionality.",
+        "subsections": [
+          {
+            "subtitle": "Identifiers",
+            "points": [
+              "Must begin with a letter, underscore (_), or dollar sign ($).",
+              "Subsequent characters can be letters, digits, underscores, or dollar signs.",
+              "Cannot be a Java keyword.",
+              "Case-sensitive (e.g., 'age' and 'Age' are different identifiers).",
+              "No special characters except '_' and '$'."
+            ],
+            "examples": [
+              {
+                "type": "text",
+                "data": "Valid: age, _total, $price\nInvalid: 2name (cannot start with a digit), my-name (contains a hyphen)"
+              }
+            ]
+          },
+          {
+            "subtitle": "Keywords",
+            "points": [
+              "Data Types: int, double, char, boolean",
+              "Control Flow: if, else, for, while, switch",
+              "Class/Method Modifiers: public, private, protected, static",
+              "Object-Oriented Keywords: class, interface, extends, implements"
+            ],
+            "examples": [
+              {
+                "type": "code",
+                "language": "java",
+                "data": "public class Example {\n    private int age;\n    public void display() {\n        System.out.println(\"This is an example.\");\n    }\n}"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Java Data Types",
+        "problemStatement": "Java provides 8 primitive data types and corresponding wrapper classes to treat them as objects.",
+        "content": "Primitive data types include int, double, char, etc., while wrapper classes provide an object representation for these types.",
+        "subsections": [
+          {
+            "subtitle": "Primitive Data Types",
+            "table": [
+              {
+                "Data Type": "byte",
+                "Size (bits)": 8,
+                "Default Value": "0",
+                "Range": "-128 to 127"
+              },
+              {
+                "Data Type": "short",
+                "Size (bits)": 16,
+                "Default Value": "0",
+                "Range": "-32,768 to 32,767"
+              },
+              {
+                "Data Type": "int",
+                "Size (bits)": 32,
+                "Default Value": "0",
+                "Range": "-2,147,483,648 to 2,147,483,647"
+              },
+              {
+                "Data Type": "long",
+                "Size (bits)": 64,
+                "Default Value": "0L",
+                "Range": "-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807"
+              },
+              {
+                "Data Type": "float",
+                "Size (bits)": 32,
+                "Default Value": "0.0f",
+                "Range": "~1.4E-45 to ~3.4E38"
+              },
+              {
+                "Data Type": "double",
+                "Size (bits)": 64,
+                "Default Value": "0.0d",
+                "Range": "~4.9E-324 to ~1.7E308"
+              },
+              {
+                "Data Type": "char",
+                "Size (bits)": 16,
+                "Default Value": "'\\u0000'",
+                "Range": "0 to 65,535"
+              },
+              {
+                "Data Type": "boolean",
+                "Size (bits)": 1,
+                "Default Value": "false",
+                "Range": "true or false"
+              }
+            ]
+          },
+          {
+            "subtitle": "Wrapper Classes",
+            "content": "Wrapper classes provide an object representation for primitive data types.",
+            "examples": [
+              {
+                "type": "code",
+                "language": "java",
+                "data": "Integer num = 10; // Auto-boxing\nint value = num;  // Auto-unboxing"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Operators in Java",
+        "problemStatement": "Operators perform calculations, comparisons, and logic. Precedence determines the order of execution.",
+        "content": "Java provides arithmetic, relational, logical, assignment, bitwise, and ternary operators.",
+        "subsections": [
+          {
+            "subtitle": "Operator Types",
+            "categories": [
+              {
+                "category": "Arithmetic",
+                "operators": "+, -, *, /, %",
+                "example": "int result = 10 + 5;"
+              },
+              {
+                "category": "Relational",
+                "operators": "<, >, <=, >=, ==, !=",
+                "example": "boolean isEqual = (10 == 20);"
+              },
+              {
+                "category": "Logical",
+                "operators": "&&, ||, !",
+                "example": "boolean isAdult = (age >= 18 && age <= 60);"
+              },
+              {
+                "category": "Assignment",
+                "operators": "=, +=, -=, *=, /=, %=",
+                "example": "x += 5; // Equivalent to x = x + 5"
+              },
+              {
+                "category": "Bitwise",
+                "operators": "&, |, ^, ~",
+                "example": "int result = 5 & 3;"
+              },
+              {
+                "category": "Ternary",
+                "operators": "condition ? trueValue : falseValue",
+                "example": "int max = (a > b) ? a : b;"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Practice Problems",
+        "problemStatement": "Practice basic calculations and operator precedence with the following problems.",
+        "problems": [
+          {
+            "problem": "Write a program for basic calculations.",
+            "solution": {
+              "type": "code",
+              "language": "java",
+              "data": "import java.util.Scanner;\n\npublic class Calculator {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        System.out.print(\"Enter first number: \");\n        int num1 = sc.nextInt();\n        System.out.print(\"Enter second number: \");\n        int num2 = sc.nextInt();\n        System.out.println(\"Addition: \" + (num1 + num2));\n        System.out.println(\"Subtraction: \" + (num1 - num2));\n        System.out.println(\"Multiplication: \" + (num1 * num2));\n        System.out.println(\"Division: \" + (num1 / num2));\n    }\n}"
+            }
+          },
+          {
+            "problem": "Write a program to demonstrate operator precedence.",
+            "solution": {
+              "type": "code",
+              "language": "java",
+              "data": "public class OperatorPrecedence {\n    public static void main(String[] args) {\n        int result = 10 + 5 * 2 - 3;\n        System.out.println(\"Result: \" + result); // Result = 17\n    }\n}"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  

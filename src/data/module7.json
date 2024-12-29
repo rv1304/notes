@@ -1,0 +1,119 @@
+{
+    "moduleTitle": "Object-Oriented Programming",
+    "introduction": "This module covers key object-oriented programming concepts in Java, including inheritance, polymorphism, abstract classes, interfaces, and practice problems.",
+    "sections": [
+      {
+        "title": "Inheritance",
+        "content": "Inheritance is a mechanism where one class acquires the properties and behaviors of another class.",
+        "subsections": [
+          {
+            "subtitle": "Types of Inheritance",
+            "content": "Java supports the following types of inheritance:",
+            "points": [
+              "Single Inheritance: A class inherits from one parent class.",
+              "Multilevel Inheritance: A class inherits from a class that itself inherits from another class.",
+              "Hierarchical Inheritance: Multiple classes inherit from a single parent class."
+            ],
+            "examples": [
+              {
+                "type": "code",
+                "language": "java",
+                "data": "// Single Inheritance\nclass Parent {\n    void display() {\n        System.out.println(\"Parent Class\");\n    }\n}\n\nclass Child extends Parent {\n    void show() {\n        System.out.println(\"Child Class\");\n    }\n}\n\npublic class Test {\n    public static void main(String[] args) {\n        Child obj = new Child();\n        obj.display(); // Parent Class\n        obj.show();    // Child Class\n    }\n}"
+              }
+            ]
+          },
+          {
+            "subtitle": "Using super Keyword",
+            "content": "The `super` keyword is used to call the parent class constructor or methods.",
+            "examples": [
+              {
+                "type": "code",
+                "language": "java",
+                "data": "class Parent {\n    Parent() {\n        System.out.println(\"Parent Constructor\");\n    }\n    void display() {\n        System.out.println(\"Parent Method\");\n    }\n}\n\nclass Child extends Parent {\n    Child() {\n        super(); // Calls Parent constructor\n        System.out.println(\"Child Constructor\");\n    }\n    void show() {\n        super.display(); // Calls Parent method\n        System.out.println(\"Child Method\");\n    }\n}\n\npublic class Test {\n    public static void main(String[] args) {\n        Child obj = new Child();\n        obj.show();\n    }\n}"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Polymorphism",
+        "content": "Polymorphism allows a single action to be performed in different ways.",
+        "subsections": [
+          {
+            "subtitle": "Method Overloading",
+            "content": "Method overloading occurs when multiple methods in the same class have the same name but different parameters.",
+            "examples": [
+              {
+                "type": "code",
+                "language": "java",
+                "data": "class Calculator {\n    int add(int a, int b) {\n        return a + b;\n    }\n    double add(double a, double b) {\n        return a + b;\n    }\n}\n\npublic class Test {\n    public static void main(String[] args) {\n        Calculator calc = new Calculator();\n        System.out.println(calc.add(5, 10));     // 15\n        System.out.println(calc.add(5.5, 10.5)); // 16.0\n    }\n}"
+              }
+            ]
+          },
+          {
+            "subtitle": "Method Overriding",
+            "content": "Method overriding occurs when a subclass provides a specific implementation for a method already defined in the parent class.",
+            "examples": [
+              {
+                "type": "code",
+                "language": "java",
+                "data": "class Parent {\n    void display() {\n        System.out.println(\"Parent Method\");\n    }\n}\n\nclass Child extends Parent {\n    @Override\n    void display() {\n        System.out.println(\"Child Method\");\n    }\n}\n\npublic class Test {\n    public static void main(String[] args) {\n        Parent obj = new Child();\n        obj.display(); // Child Method\n    }\n}"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Abstract Classes and Interfaces",
+        "content": "Abstract classes and interfaces provide a way to define methods that must be implemented by derived classes.",
+        "subsections": [
+          {
+            "subtitle": "Abstract Classes",
+            "content": "An abstract class can have abstract methods (without a body) and concrete methods (with a body).",
+            "examples": [
+              {
+                "type": "code",
+                "language": "java",
+                "data": "abstract class Shape {\n    abstract void draw();\n    void display() {\n        System.out.println(\"Shape Class\");\n    }\n}\n\nclass Circle extends Shape {\n    void draw() {\n        System.out.println(\"Drawing Circle\");\n    }\n}\n\npublic class Test {\n    public static void main(String[] args) {\n        Shape s = new Circle();\n        s.draw();\n        s.display();\n    }\n}"
+              }
+            ]
+          },
+          {
+            "subtitle": "Interfaces",
+            "content": "Interfaces define methods that must be implemented by a class. They support multiple inheritance.",
+            "examples": [
+              {
+                "type": "code",
+                "language": "java",
+                "data": "interface Drawable {\n    void draw();\n}\n\nclass Rectangle implements Drawable {\n    public void draw() {\n        System.out.println(\"Drawing Rectangle\");\n    }\n}\n\npublic class Test {\n    public static void main(String[] args) {\n        Drawable d = new Rectangle();\n        d.draw();\n    }\n}"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Practice Problems",
+        "problems": [
+          {
+            "problem": "Shape Hierarchy",
+            "description": "Create a hierarchy of shapes (Circle, Rectangle, etc.) using inheritance. Define an abstract method for calculating area.",
+            "solution": {
+              "type": "code",
+              "language": "java",
+              "data": "abstract class Shape {\n    abstract double calculateArea();\n}\n\nclass Circle extends Shape {\n    double radius;\n    Circle(double radius) {\n        this.radius = radius;\n    }\n    double calculateArea() {\n        return Math.PI * radius * radius;\n    }\n}\n\nclass Rectangle extends Shape {\n    double length, width;\n    Rectangle(double length, double width) {\n        this.length = length;\n        this.width = width;\n    }\n    double calculateArea() {\n        return length * width;\n    }\n}\n\npublic class Test {\n    public static void main(String[] args) {\n        Shape circle = new Circle(5);\n        Shape rectangle = new Rectangle(4, 6);\n\n        System.out.println(\"Circle Area: \" + circle.calculateArea());\n        System.out.println(\"Rectangle Area: \" + rectangle.calculateArea());\n    }\n}"
+            }
+          },
+          {
+            "problem": "Employee Management System",
+            "description": "Design an Employee class with fields for name, ID, and salary. Create subclasses for Manager and Developer with additional fields. Demonstrate polymorphism.",
+            "solution": {
+              "type": "code",
+              "language": "java",
+              "data": "class Employee {\n    String name;\n    int id;\n    double salary;\n\n    Employee(String name, int id, double salary) {\n        this.name = name;\n        this.id = id;\n        this.salary = salary;\n    }\n\n    void displayInfo() {\n        System.out.println(\"Name: \" + name);\n        System.out.println(\"ID: \" + id);\n        System.out.println(\"Salary: \" + salary);\n    }\n}\n\nclass Manager extends Employee {\n    String department;\n\n    Manager(String name, int id, double salary, String department) {\n        super(name, id, salary);\n        this.department = department;\n    }\n\n    void displayInfo() {\n        super.displayInfo();\n        System.out.println(\"Department: \" + department);\n    }\n}\n\nclass Developer extends Employee {\n    String programmingLanguage;\n\n    Developer(String name, int id, double salary, String programmingLanguage) {\n        super(name, id, salary);\n        this.programmingLanguage = programmingLanguage;\n    }\n\n    void displayInfo() {\n        super.displayInfo();\n        System.out.println(\"Programming Language: \" + programmingLanguage);\n    }\n}\n\npublic class Test {\n    public static void main(String[] args) {\n        Employee manager = new Manager(\"Alice\", 101, 90000, \"HR\");\n        Employee developer = new Developer(\"Bob\", 102, 80000, \"Java\");\n\n        manager.displayInfo();\n        System.out.println();\n        developer.displayInfo();\n    }\n}"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  

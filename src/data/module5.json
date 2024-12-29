@@ -1,0 +1,120 @@
+{
+    "moduleTitle": "Strings in Java",
+    "introduction": "This module covers string manipulation in Java, focusing on immutable strings, common methods, mutable string classes, and string tokenization.",
+    "sections": [
+      {
+        "title": "String Basics",
+        "content": "Learn the fundamentals of Java strings, their immutability, and common methods for string manipulation.",
+        "subsections": [
+          {
+            "subtitle": "Immutable Property of Strings",
+            "content": "Strings in Java are immutable, meaning their value cannot be changed once created. Any modification results in the creation of a new string object.",
+            "examples": [
+              {
+                "type": "code",
+                "language": "java",
+                "data": "String str1 = \"Hello\";\nString str2 = str1.concat(\" World\"); // str1 remains \"Hello\", str2 becomes \"Hello World\""
+              }
+            ]
+          },
+          {
+            "subtitle": "Common Methods",
+            "content": "Java provides a variety of methods to manipulate and retrieve information from strings.",
+            "methods": [
+              {
+                "name": "length()",
+                "description": "Returns the number of characters in the string.",
+                "example": {
+                  "type": "code",
+                  "language": "java",
+                  "data": "String str = \"Hello\";\nSystem.out.println(str.length()); // Output: 5"
+                }
+              },
+              {
+                "name": "substring(int start, int end)",
+                "description": "Returns a substring starting at 'start' index and ending at 'end' index (exclusive).",
+                "example": {
+                  "type": "code",
+                  "language": "java",
+                  "data": "String str = \"Hello World\";\nSystem.out.println(str.substring(0, 5)); // Output: Hello"
+                }
+              },
+              {
+                "name": "charAt(int index)",
+                "description": "Returns the character at the specified index.",
+                "example": {
+                  "type": "code",
+                  "language": "java",
+                  "data": "String str = \"Hello\";\nSystem.out.println(str.charAt(1)); // Output: e"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "StringBuffer and StringBuilder",
+        "content": "StringBuffer and StringBuilder are used for mutable strings, meaning their values can be changed without creating new objects.",
+        "subsections": [
+          {
+            "subtitle": "StringBuffer",
+            "content": "Thread-safe and synchronized mutable string class.",
+            "examples": [
+              {
+                "type": "code",
+                "language": "java",
+                "data": "StringBuffer sb = new StringBuffer(\"Hello\");\nsb.append(\" World\");\nSystem.out.println(sb); // Output: Hello World"
+              }
+            ]
+          },
+          {
+            "subtitle": "StringBuilder",
+            "content": "Faster than StringBuffer but not thread-safe.",
+            "examples": [
+              {
+                "type": "code",
+                "language": "java",
+                "data": "StringBuilder sb = new StringBuilder(\"Hello\");\nsb.append(\" World\");\nSystem.out.println(sb); // Output: Hello World"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "StringTokenizer",
+        "content": "StringTokenizer is used to split strings into tokens based on delimiters.",
+        "syntax": "StringTokenizer st = new StringTokenizer(string, delimiter);",
+        "examples": [
+          {
+            "type": "code",
+            "language": "java",
+            "data": "import java.util.StringTokenizer;\n\nStringTokenizer st = new StringTokenizer(\"Hello,World\", \",\");\nwhile (st.hasMoreTokens()) {\n    System.out.println(st.nextToken());\n}"
+          }
+        ]
+      },
+      {
+        "title": "Practice Problems",
+        "problems": [
+          {
+            "problem": "Palindrome Check",
+            "description": "Write a program to check if a string is a palindrome.",
+            "solution": {
+              "type": "code",
+              "language": "java",
+              "data": "public class PalindromeCheck {\n    public static void main(String[] args) {\n        String str = \"madam\";\n        String reversed = new StringBuilder(str).reverse().toString();\n        if (str.equals(reversed)) {\n            System.out.println(\"Palindrome\");\n        } else {\n            System.out.println(\"Not a Palindrome\");\n        }\n    }\n}"
+            }
+          },
+          {
+            "problem": "Finding Substrings",
+            "description": "Write a program to find all substrings of a string.",
+            "solution": {
+              "type": "code",
+              "language": "java",
+              "data": "public class SubstringFinder {\n    public static void main(String[] args) {\n        String str = \"abc\";\n        for (int i = 0; i < str.length(); i++) {\n            for (int j = i + 1; j <= str.length(); j++) {\n                System.out.println(str.substring(i, j));\n            }\n        }\n    }\n}"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  

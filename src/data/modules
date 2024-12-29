@@ -1,0 +1,16 @@
+{
+    "moduleTitle": "Introduction to Java and Its Ecosystem",
+    "sections": [
+      {
+        "title": "History and Features of Java",
+        "content": "Java was created in 1995 by Sun Microsystems to provide platform independence.",
+        "code": "public class HelloWorld { public static void main(String[] args) { System.out.println(\"Hello, World!\"); } }"
+      },
+      {
+        "title": "Java Virtual Machine (JVM), JRE, and JDK",
+        "content": "The JVM converts bytecode into machine code for execution. The JRE provides the runtime environment, and the JDK is for development.",
+        "code": null
+      }
+    ]
+  }
+  

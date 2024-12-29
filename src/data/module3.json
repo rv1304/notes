@@ -1,0 +1,164 @@
+{
+    "moduleTitle": "Control Statements",
+    "introduction": "This module covers decision constructs, loop constructs, jump statements, and practice problems for better control over program flow.",
+    "sections": [
+      {
+        "title": "Decision Constructs",
+        "content": "Learn about decision-making constructs like if, else if, and switch-case in Java.",
+        "subsections": [
+          {
+            "subtitle": "if Statement",
+            "content": "Evaluates a condition; if true, executes the block.",
+            "syntax": "if (condition) {\n    // code to execute if condition is true\n}",
+            "examples": [
+              {
+                "type": "code",
+                "language": "java",
+                "data": "int age = 18;\nif (age >= 18) {\n    System.out.println(\"You are an adult.\");\n}"
+              }
+            ]
+          },
+          {
+            "subtitle": "else if Statement",
+            "content": "Adds additional conditions after if.",
+            "syntax": "if (condition1) {\n    // code for condition1\n} else if (condition2) {\n    // code for condition2\n} else {\n    // default code\n}",
+            "examples": [
+              {
+                "type": "code",
+                "language": "java",
+                "data": "int marks = 75;\nif (marks >= 90) {\n    System.out.println(\"Grade: A\");\n} else if (marks >= 75) {\n    System.out.println(\"Grade: B\");\n} else {\n    System.out.println(\"Grade: C\");\n}"
+              }
+            ]
+          },
+          {
+            "subtitle": "switch-case",
+            "content": "Simplifies handling multiple conditions for a single variable.",
+            "syntax": "switch (variable) {\n    case value1:\n        // code for value1\n        break;\n    default:\n        // default code\n}",
+            "examples": [
+              {
+                "type": "code",
+                "language": "java",
+                "data": "int day = 3;\nswitch (day) {\n    case 1:\n        System.out.println(\"Monday\");\n        break;\n    case 2:\n        System.out.println(\"Tuesday\");\n        break;\n    case 3:\n        System.out.println(\"Wednesday\");\n        break;\n    default:\n        System.out.println(\"Other Day\");\n}"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Loop Constructs",
+        "content": "Understand loops like for, while, do-while, and enhanced for in Java.",
+        "subsections": [
+          {
+            "subtitle": "for Loop",
+            "content": "Iterates a block of code a fixed number of times.",
+            "syntax": "for (initialization; condition; increment/decrement) {\n    // code to execute\n}",
+            "examples": [
+              {
+                "type": "code",
+                "language": "java",
+                "data": "for (int i = 1; i <= 5; i++) {\n    System.out.println(\"Count: \" + i);\n}"
+              }
+            ]
+          },
+          {
+            "subtitle": "while Loop",
+            "content": "Executes as long as the condition is true.",
+            "syntax": "while (condition) {\n    // code to execute\n}",
+            "examples": [
+              {
+                "type": "code",
+                "language": "java",
+                "data": "int i = 1;\nwhile (i <= 5) {\n    System.out.println(\"Count: \" + i);\n    i++;\n}"
+              }
+            ]
+          },
+          {
+            "subtitle": "do-while Loop",
+            "content": "Executes the code block at least once, even if the condition is false.",
+            "syntax": "do {\n    // code to execute\n} while (condition);",
+            "examples": [
+              {
+                "type": "code",
+                "language": "java",
+                "data": "int i = 1;\ndo {\n    System.out.println(\"Count: \" + i);\n    i++;\n} while (i <= 5);"
+              }
+            ]
+          },
+          {
+            "subtitle": "Enhanced for Loop",
+            "content": "Used for iterating over arrays or collections.",
+            "syntax": "for (dataType variable : array) {\n    // code to execute\n}",
+            "examples": [
+              {
+                "type": "code",
+                "language": "java",
+                "data": "int[] numbers = {1, 2, 3, 4, 5};\nfor (int num : numbers) {\n    System.out.println(\"Number: \" + num);\n}"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Jump Statements",
+        "content": "Learn how to control loop execution using break, continue, and return.",
+        "subsections": [
+          {
+            "subtitle": "break",
+            "content": "Exits the nearest enclosing loop or switch.",
+            "examples": [
+              {
+                "type": "code",
+                "language": "java",
+                "data": "for (int i = 1; i <= 5; i++) {\n    if (i == 3) {\n        break;\n    }\n    System.out.println(i);\n}"
+              }
+            ]
+          },
+          {
+            "subtitle": "continue",
+            "content": "Skips the current iteration and moves to the next.",
+            "examples": [
+              {
+                "type": "code",
+                "language": "java",
+                "data": "for (int i = 1; i <= 5; i++) {\n    if (i == 3) {\n        continue;\n    }\n    System.out.println(i);\n}"
+              }
+            ]
+          },
+          {
+            "subtitle": "return",
+            "content": "Exits from the method and optionally returns a value.",
+            "examples": [
+              {
+                "type": "code",
+                "language": "java",
+                "data": "public int sum(int a, int b) {\n    return a + b;\n}"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Practice Problems",
+        "content": "Practice problems to reinforce control statement concepts.",
+        "problems": [
+          {
+            "problem": "Write a program to print a pattern using nested loops.",
+            "solution": {
+              "type": "code",
+              "language": "java",
+              "data": "public class Pattern {\n    public static void main(String[] args) {\n        for (int i = 1; i <= 5; i++) {\n            for (int j = 1; j <= i; j++) {\n                System.out.print(\"*\");\n            }\n            System.out.println();\n        }\n    }\n}"
+            }
+          },
+          {
+            "problem": "Write a program to print a multiplication table up to 5x5.",
+            "solution": {
+              "type": "code",
+              "language": "java",
+              "data": "public class MultiplicationTable {\n    public static void main(String[] args) {\n        for (int i = 1; i <= 5; i++) {\n            for (int j = 1; j <= 5; j++) {\n                System.out.print(i * j + \"\\t\");\n            }\n            System.out.println();\n        }\n    }\n}"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  

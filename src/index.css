@@ -1,0 +1,139 @@
+/* General Styles */
+body {
+  background-color: #121212; /* Sleek dark theme */
+  color: #ffffff; /* White text for readability */
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scroll due to wave */
+  position: relative; /* To position the wave correctly */
+}
+
+/* Wave Animation */
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 20vh;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%2300ffff" fill-opacity="0.8" d="M0,64L60,80C120,96,240,128,360,144C480,160,600,160,720,154.7C840,149,960,139,1080,149.3C1200,160,1320,192,1380,208L1440,224L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>');
+  background-size: 100% 100%;
+  animation: waveAnimation 6s linear infinite;
+}
+
+/* Wave Animation Keyframes */
+@keyframes waveAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+/* Container */
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #1e1e2f;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+}
+
+/* Headings */
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #00ffff; /* Neon Cyan */
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: #00ffff;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+h3 {
+  font-size: 1.4rem;
+  color: #ffdd00; /* Accent Yellow */
+  margin-bottom: 10px;
+}
+
+/* Section Styles */
+.section {
+  margin-bottom: 30px;
+  border-bottom: 2px solid #333;
+  padding-bottom: 20px;
+}
+
+.problem-statement,
+.examples,
+.solution {
+  background-color: #242436; /* Slightly darker container */
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Examples and Code Blocks */
+.example {
+  margin-top: 15px;
+  background-color: #333348;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.example p {
+  margin: 5px 0;
+}
+
+.code-block {
+  background-color: #161b22; /* Code block background */
+  color: #79c0ff; /* Code text color */
+  padding: 15px;
+  border-radius: 5px;
+  font-family: 'Courier New', Courier, monospace;
+  overflow-x: auto;
+}
+
+/* Table Styles */
+.table-container {
+  margin-top: 15px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}
+
+th, td {
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #444;
+}
+
+th {
+  background-color: #333348; /* Table header */
+  color: #ffffff;
+}
+
+td {
+  background-color: #2a2a3b;
+  color: #ffffff;
+}
+
+/* Blockquote */
+blockquote {
+  margin: 15px 0;
+  padding: 15px;
+  background-color: #2e2e42;
+  border-left: 4px solid #00ffff;
+  color: #cfcfcf;
+  border-radius: 5px;
+}

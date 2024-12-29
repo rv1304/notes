@@ -1,0 +1,113 @@
+{
+    "moduleTitle": "Advanced Java Features",
+    "introduction": "This module covers advanced Java concepts such as exception handling, file I/O, serialization, and essential Java utilities like regex and the date-time API.",
+    "sections": [
+      {
+        "title": "Exception Handling",
+        "content": "Exception handling in Java allows programs to handle runtime errors gracefully.",
+        "subsections": [
+          {
+            "subtitle": "Try-Catch",
+            "content": "The try-catch block is used to handle exceptions. Code that may throw an exception is placed in the try block, and the catch block handles the exception.",
+            "examples": [
+              {
+                "type": "code",
+                "language": "java",
+                "data": "try {\n    int result = 10 / 0;\n} catch (ArithmeticException e) {\n    System.out.println(\"Cannot divide by zero: \" + e.getMessage());\n}"
+              }
+            ]
+          },
+          {
+            "subtitle": "Throw and Throws",
+            "content": "The throw keyword is used to explicitly throw an exception, and throws is used to declare exceptions in method signatures.",
+            "examples": [
+              {
+                "type": "code",
+                "language": "java",
+                "data": "// Throw example\npublic void checkAge(int age) {\n    if (age < 18) {\n        throw new IllegalArgumentException(\"Age must be 18 or above.\");\n    }\n}\n\n// Throws example\npublic void readFile(String filePath) throws IOException {\n    FileReader file = new FileReader(filePath);\n}"
+              }
+            ]
+          },
+          {
+            "subtitle": "Finally Block",
+            "content": "The finally block is used to execute code regardless of whether an exception occurs.",
+            "examples": [
+              {
+                "type": "code",
+                "language": "java",
+                "data": "try {\n    int result = 10 / 0;\n} catch (ArithmeticException e) {\n    System.out.println(\"Error: \" + e.getMessage());\n} finally {\n    System.out.println(\"Execution completed.\");\n}"
+              }
+            ]
+          },
+          {
+            "subtitle": "Custom Exceptions",
+            "content": "Custom exceptions allow developers to create their own exception types for specific scenarios.",
+            "examples": [
+              {
+                "type": "code",
+                "language": "java",
+                "data": "class CustomException extends Exception {\n    public CustomException(String message) {\n        super(message);\n    }\n}\n\npublic class Test {\n    public static void main(String[] args) {\n        try {\n            throw new CustomException(\"This is a custom exception.\");\n        } catch (CustomException e) {\n            System.out.println(e.getMessage());\n        }\n    }\n}"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "File I/O and Serialization",
+        "content": "Java provides APIs to read and write files and perform object serialization and deserialization.",
+        "subsections": [
+          {
+            "subtitle": "Reading and Writing Files",
+            "content": "Use classes like FileReader, FileWriter, and BufferedReader for file I/O.",
+            "examples": [
+              {
+                "type": "code",
+                "language": "java",
+                "data": "// Writing to a file\ntry (FileWriter writer = new FileWriter(\"output.txt\")) {\n    writer.write(\"Hello, World!\");\n}\n\n// Reading from a file\ntry (BufferedReader reader = new BufferedReader(new FileReader(\"output.txt\"))) {\n    String line;\n    while ((line = reader.readLine()) != null) {\n        System.out.println(line);\n    }\n}"
+              }
+            ]
+          },
+          {
+            "subtitle": "Object Serialization and Deserialization",
+            "content": "Serialization converts an object into a byte stream, and deserialization converts a byte stream back into an object.",
+            "examples": [
+              {
+                "type": "code",
+                "language": "java",
+                "data": "// Serialization\ntry (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(\"object.ser\"))) {\n    oos.writeObject(new Person(\"John\", 30));\n}\n\n// Deserialization\ntry (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(\"object.ser\"))) {\n    Person p = (Person) ois.readObject();\n    System.out.println(p);\n}\n\nclass Person implements Serializable {\n    private String name;\n    private int age;\n\n    public Person(String name, int age) {\n        this.name = name;\n        this.age = age;\n    }\n\n    @Override\n    public String toString() {\n        return \"Person{name='\" + name + \"', age=\" + age + \"}\";\n    }\n}"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Java Utilities",
+        "content": "Java provides utility classes like regex for pattern matching and the date-time API for handling dates and times.",
+        "subsections": [
+          {
+            "subtitle": "Regular Expressions (java.util.regex)",
+            "content": "Regular expressions are used for pattern matching and string manipulation.",
+            "examples": [
+              {
+                "type": "code",
+                "language": "java",
+                "data": "import java.util.regex.*;\n\npublic class RegexExample {\n    public static void main(String[] args) {\n        String pattern = \"\\b[A-Za-z]{4}\\b\"; // Matches words with 4 letters\n        String text = \"This is a test of regex.\";\n\n        Pattern p = Pattern.compile(pattern);\n        Matcher m = p.matcher(text);\n\n        while (m.find()) {\n            System.out.println(\"Found: \" + m.group());\n        }\n    }\n}"
+              }
+            ]
+          },
+          {
+            "subtitle": "Date and Time API",
+            "content": "The java.time package provides classes to work with dates and times in Java.",
+            "examples": [
+              {
+                "type": "code",
+                "language": "java",
+                "data": "import java.time.*;\n\npublic class DateTimeExample {\n    public static void main(String[] args) {\n        LocalDate date = LocalDate.now();\n        LocalTime time = LocalTime.now();\n        LocalDateTime dateTime = LocalDateTime.now();\n\n        System.out.println(\"Date: \" + date);\n        System.out.println(\"Time: \" + time);\n        System.out.println(\"Date and Time: \" + dateTime);\n    }\n}"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  
